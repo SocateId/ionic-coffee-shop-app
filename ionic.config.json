@@ -1,0 +1,7 @@
+{
+  "name": "ionic-coffee-shop-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
