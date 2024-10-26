@@ -1,0 +1,55 @@
+{
+	"0":{
+		"id":0,
+		"name":"Espresso",
+		"categories": "coffee",
+		"sizes": [
+			{"tall":1.95},
+			{"grande":2.05},
+			{"venti":2.35}
+		],
+		"image":"https://images.pexels.com/photos/302901/pexels-photo-302901.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+	},
+	"1":{
+		"id":1,
+		"name":"Latte",
+		"categories": "coffee",
+		"sizes": [
+			{"tall":3.4},
+			{"grande":4.45},
+			{"venti":4.46}
+		],
+		"image":"https://images.pexels.com/photos/350478/pexels-photo-350478.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+	},
+	"2":{
+		"id":2,
+		"name":"Cappuccino",
+		"categories": "coffee",
+		"sizes": [
+			{"tall":3.15},
+			{"grande":3.75},
+			{"venti":4.15}
+		],
+		"image":"https://images.pexels.com/photos/362572/pexels-photo-362572.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+	},
+	"3":{
+		"id":3,
+		"name":"Green Tea",
+		"categories": "tea",
+		"sizes": [
+			{"tall":3.45},
+			{"grande":4.25},
+			{"venti":4.45}
+		],
+		"image":"https://images.pexels.com/photos/3090274/pexels-photo-3090274.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+	},
+	"4":{
+		"id":4,
+		"name":"Hot Tea",
+		"categories": "tea",
+		"sizes": [
+			{"grande":1.95}
+		],
+		"image":"https://images.pexels.com/photos/1638280/pexels-photo-1638280.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+	}
+}

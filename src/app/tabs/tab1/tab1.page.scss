@@ -1,0 +1,46 @@
+.container {
+	display: grid;
+	grid-template-columns: 80px 2fr;	/* Sidebar width + Main content */
+	overflow: hidden;
+	height: 100vh;
+}
+
+// Sidebar Stuff
+.sidebar {
+	top: 0;
+	bottom: 0;
+	width: 100px;
+	z-index: 10;
+}
+.menu-content {
+	padding-top: 12px;
+}
+
+// Main Content Stuff
+.main-content {
+	margin-left: 15px; /* Offset for the fixed sidebar */
+	padding: 16px;
+  	overflow-y: auto;
+}
+h2 {
+	font-weight: bold;
+	text-indent: 5%;
+}
+ion-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+ion-card img {
+	object-fit: cover;
+	height: 95px;
+	width: 100%;
+}
+ion-card-header {
+	padding: 12px 0;
+	text-align: center;
+	flex-shrink: 1;
+}
+ion-card-title {
+	font-size: medium;
+}
