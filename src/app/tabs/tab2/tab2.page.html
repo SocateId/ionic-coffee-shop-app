@@ -1,18 +1,55 @@
-
-<ion-footer [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
-</ion-footer>
-
 <ion-content [fullscreen]="true">
-  <ion-footer collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-footer>
+	<p id="empty-cart-text" *ngIf="(cartItems$ | async)!.length <= 0">
+		Your cart is empty right now, why not go order something to drink! 😊
+	</p>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+
+	<!-- Category Coffee -->
+	<div id="category-coffee" *ngIf="(cartCoffees$ | async)!.length > 0">
+		<h2 class="category-header">Coffees: </h2>
+		<ion-list *ngFor="let item of (cartCoffees$ | async)">
+			<ion-item>
+	
+				<ion-label>
+					<h2>{{ item.cartItemDetails.name }} ({{ item.cartItemDetails.size }})</h2>
+					<p>Price: {{ item.cartItemDetails.price | currency }} x {{ item.quantity }}</p>
+					<p>Total Price: {{ GetCartItemPrice(item) | currency }}</p>
+				</ion-label>
+	
+				<ion-button (click)="DecreaseCartItemQuantity(item.cartItemDetails)" color="danger">-</ion-button>
+				<ion-button (click)="IncreaseCartItemQuantity(item.cartItemDetails)" color="primary">+</ion-button>
+			
+			</ion-item>
+		</ion-list>
+	</div>
+
+	<!-- Category Teas -->
+	<div id="category-tea" *ngIf="(cartTeas$ | async)!.length > 0">
+		<h2 class="category-header">Teas: </h2>
+		<ion-list *ngFor="let item of (cartTeas$ | async)">
+			<ion-item>
+	
+				<ion-label>
+					<h2>{{ item.cartItemDetails.name }} ({{ item.cartItemDetails.size }})</h2>
+					<p>Price: {{ item.cartItemDetails.price | currency }} x {{ item.quantity }}</p>
+					<p>Total Price: {{ GetCartItemPrice(item) | currency }}</p>
+				</ion-label>
+	
+				<ion-button (click)="DecreaseCartItemQuantity(item.cartItemDetails)" color="danger">-</ion-button>
+				<ion-button (click)="IncreaseCartItemQuantity(item.cartItemDetails)" color="primary">+</ion-button>
+			
+			</ion-item>
+		</ion-list>
+	</div>
 </ion-content>
+
+<ion-footer>
+	<ion-toolbar>
+		<ion-grid>
+			<ion-row>
+				<ion-col justify-content-center align-items-center id="total-price"><ion-title>Total: {{ totalPrice$ | async | currency }}</ion-title></ion-col>
+				<ion-col><ion-button color="success" expand="full" (click)="Checkout()">Confirm</ion-button></ion-col>
+			</ion-row>
+		</ion-grid>
+	</ion-toolbar>
+</ion-footer>

@@ -17,21 +17,28 @@
 			<ion-col><ion-img id="drink-image" [src]="drink.image" [alt]="drink.name"></ion-img></ion-col>
 		</ion-row>
 
-		<!-- Item Count -->
+		<!-- Sizes Option -->
 		<ion-row>
 			<ion-col>
-				<p>This is some test text</p>
+				<!-- The Sizes and Prices of the Drink-->
+				<ion-segment [value]="drinkSizesPrices[0][0]" (ionChange)="SetDrinkSizePrice($event)">
+					<ion-segment-button *ngFor="let drinkSizePrice of drinkSizesPrices" [value]="drinkSizePrice[0]">
+						<ion-label>{{ drinkSizePrice[0] }}<br>{{ drinkSizePrice[1] | currency }}</ion-label>
+					</ion-segment-button>
+				</ion-segment>
 			</ion-col>
 		</ion-row>
+
 	</ion-grid>
 </ion-content>
 
 <ion-footer>
 	<ion-toolbar>
+		<ion-title id="drink-price">Price: {{ drinkItemDetails.price | currency }}</ion-title>
 		<ion-grid>
 			<ion-row>
 				<ion-col><ion-button color="danger" expand="full" routerLink="/tabs/home">Back</ion-button></ion-col>
-				<ion-col><ion-button color="success" expand="full" routerLink="/tabs/home">Confirm</ion-button></ion-col>
+				<ion-col><ion-button color="success" expand="full" routerLink="/tabs/home" (click)="AddToCart()">Add to Cart</ion-button></ion-col>
 			</ion-row>
 		</ion-grid>
 	</ion-toolbar>

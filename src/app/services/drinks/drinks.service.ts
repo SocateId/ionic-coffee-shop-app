@@ -45,6 +45,17 @@ export class DrinksService {
 	public GetDrinkById(drinkId: number): Drink | undefined {
 		return this.drinks.find(drink => drink.id === drinkId);
 	}
+
+	// Returns a 2D Array of the Drink Sizes and Prices in format [Size, Price][].
+	public GetDrinkSizesPrices(drink: Drink): [string, number][] {
+		let drinkSizesPrices: [string, number][] = [];
+
+		for (const drinkSizePrice of drink.sizes) {
+			drinkSizesPrices.push([Object.keys(drinkSizePrice)[0], Object.values(drinkSizePrice)[0]]);
+		}
+
+		return drinkSizesPrices;
+	}
 }
 
 export interface Drink {
