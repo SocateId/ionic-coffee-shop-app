@@ -1,5 +1,7 @@
 # Project Information: #
 ## How to Run - ##
+Please clone the repository master brach. After cloning onto your machine, please navigate to the root folder of the project and open your terminal to download the dependencies using the command `npm i` or `npm install`.
+
 Use `ionic serve` to start the application on a local web server and see it working, and chrome developer tools to mimic the dimensions of a phone.
 
 ## Key Features - ##
